@@ -1,0 +1,152 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradients -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070913" />
+      <stop offset="45%" stop-color="#0b112c" />
+      <stop offset="100%" stop-color="#04060d" />
+    </linearGradient>
+
+    <linearGradient id="primaryGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="50%" stop-color="#818cf8" />
+      <stop offset="100%" stop-color="#c084fc" />
+    </linearGradient>
+
+    <linearGradient id="wireframeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.75" />
+      <stop offset="100%" stop-color="#c084fc" stop-opacity="0.2" />
+    </linearGradient>
+
+    <radialGradient id="glowCyan" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0" />
+    </radialGradient>
+
+    <radialGradient id="glowPurple" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#a855f7" stop-opacity="0.35" />
+      <stop offset="100%" stop-color="#a855f7" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Isometric Grid Pattern -->
+    <pattern id="isoGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 40 M 0 0 L 40 40" fill="none" stroke="#38bdf8" stroke-width="0.7" stroke-opacity="0.08" />
+    </pattern>
+
+    <style>
+      @keyframes pulseGlow {
+        0%, 100% { transform: scale(1); opacity: 0.3; }
+        50% { transform: scale(1.15); opacity: 0.55; }
+      }
+      @keyframes floatShape {
+        0%, 100% { transform: translateY(0px) rotate(0deg); }
+        50% { transform: translateY(-10px) rotate(3deg); }
+      }
+      @keyframes dashAnim {
+        to { stroke-dashoffset: -100; }
+      }
+      @keyframes nodePulse {
+        0%, 100% { r: 4px; fill-opacity: 0.8; }
+        50% { r: 6.5px; fill-opacity: 1; filter: drop-shadow(0 0 6px #38bdf8); }
+      }
+
+      .ambient-glow-1 { animation: pulseGlow 7s ease-in-out infinite; transform-origin: 250px 200px; }
+      .ambient-glow-2 { animation: pulseGlow 9s ease-in-out infinite reverse; transform-origin: 950px 220px; }
+      .float-cad { animation: floatShape 8s ease-in-out infinite; transform-origin: 980px 210px; }
+      .stream-line { stroke-dasharray: 6 6; animation: dashAnim 12s linear infinite; }
+      .cad-node { animation: nodePulse 3s ease-in-out infinite; }
+    </style>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="1200" height="420" fill="url(#bgGrad)" />
+  <rect width="1200" height="420" fill="url(#isoGrid)" />
+
+  <!-- Ambient Glowing Orbs (Dynamic Background) -->
+  <circle cx="200" cy="180" r="280" fill="url(#glowCyan)" class="ambient-glow-1" />
+  <circle cx="980" cy="210" r="260" fill="url(#glowPurple)" class="ambient-glow-2" />
+
+  <!-- Subtle CAD Coordinate Crosshairs in Background -->
+  <g stroke="#38bdf8" stroke-width="0.8" stroke-opacity="0.25">
+    <line x1="80" y1="40" x2="80" y2="380" stroke-dasharray="4 8" />
+    <line x1="40" y1="360" x2="1160" y2="360" stroke-dasharray="4 8" />
+    <circle cx="80" cy="360" r="3" fill="#38bdf8" />
+    <text x="90" y="375" fill="#38bdf8" font-size="11" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" opacity="0.6">ORIGIN [0, 0, 0]</text>
+  </g>
+
+  <!-- Right Side: Dynamic Geometric 3D Parametric Wireframe Mesh -->
+  <g class="float-cad" opacity="0.85">
+    <!-- Isometric Generative Polyhedron / B-Rep Prism -->
+    <polygon points="980,80 1110,150 1110,290 980,360 850,290 850,150" fill="none" stroke="url(#wireframeGrad)" stroke-width="1.8" />
+    <polygon points="980,80 980,220 1110,290" fill="#38bdf8" fill-opacity="0.04" stroke="#38bdf8" stroke-width="1.2" />
+    <polygon points="980,220 850,290 980,360" fill="#818cf8" fill-opacity="0.06" stroke="#818cf8" stroke-width="1.2" />
+    <polygon points="980,220 850,150 980,80" fill="#c084fc" fill-opacity="0.05" stroke="#c084fc" stroke-width="1.2" />
+    <line x1="980" y1="220" x2="1110" y2="150" stroke="#38bdf8" stroke-width="1.2" />
+
+    <!-- Parametric Curvature Ribs & Topological Splines -->
+    <path d="M 850,220 Q 980,140 1110,220" fill="none" stroke="#38bdf8" stroke-width="1.5" class="stream-line" opacity="0.75" />
+    <path d="M 850,180 Q 980,260 1110,180" fill="none" stroke="#a855f7" stroke-width="1.5" class="stream-line" opacity="0.65" />
+    <path d="M 915,115 Q 980,220 1045,325" fill="none" stroke="#818cf8" stroke-width="1.2" stroke-dasharray="3 3" opacity="0.5" />
+
+    <!-- Topological Vertices / B-Rep Control Points -->
+    <circle cx="980" cy="80" r="5" fill="#38bdf8" class="cad-node" />
+    <circle cx="1110" cy="150" r="4" fill="#818cf8" class="cad-node" />
+    <circle cx="1110" cy="290" r="4.5" fill="#c084fc" class="cad-node" />
+    <circle cx="980" cy="360" r="5" fill="#38bdf8" class="cad-node" />
+    <circle cx="850" cy="290" r="4" fill="#818cf8" class="cad-node" />
+    <circle cx="850" cy="150" r="4" fill="#c084fc" class="cad-node" />
+    <circle cx="980" cy="220" r="6" fill="#38bdf8" class="cad-node" />
+
+    <!-- Parametric Coordinate Annotations -->
+    <text x="1000" y="75" fill="#38bdf8" font-size="10" font-family="monospace" opacity="0.8">f(u, v) → B-Rep</text>
+    <text x="1120" y="225" fill="#a855f7" font-size="10" font-family="monospace" opacity="0.8">STEP / IGES</text>
+    <text x="810" y="320" fill="#38bdf8" font-size="10" font-family="monospace" opacity="0.8">d²z/dx² &lt; 0</text>
+  </g>
+
+  <!-- Left Side: Foreground Typography & Hero Branding -->
+  <g transform="translate(80, 0)">
+    <!-- Category Pill / Badge -->
+    <g transform="translate(0, 68)">
+      <rect width="320" height="30" rx="15" fill="#1e293b" fill-opacity="0.85" stroke="#38bdf8" stroke-width="1.2" stroke-opacity="0.5" />
+      <circle cx="15" cy="15" r="4" fill="#38bdf8" />
+      <text x="28" y="19" fill="#e2e8f0" font-size="11.5" font-weight="600" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" letter-spacing="0.8">
+        AI CAD • PARAMETRIC • B-REP • TOPOLOGY
+      </text>
+    </g>
+
+    <!-- Main Title (Gradient Fill, Crisp Drop Shadow) -->
+    <text x="0" y="160" fill="url(#primaryGrad)" font-size="46" font-weight="800" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" letter-spacing="-0.5">
+      Generative 3D CAD
+    </text>
+    <text x="0" y="212" fill="#ffffff" font-size="38" font-weight="700" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" letter-spacing="-0.5">
+      &amp; Parametric Modeling
+    </text>
+
+    <!-- Subtitle / Meta Description -->
+    <text x="0" y="260" fill="#94a3b8" font-size="16.5" font-weight="400" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+      Curated Guide to AI Text-to-CAD Generators, Code-First Parametric Kernels,
+    </text>
+    <text x="0" y="286" fill="#94a3b8" font-size="16.5" font-weight="400" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+      OpenCASCADE Pipelines &amp; Cloud MCAD SaaS Platforms.
+    </text>
+
+    <!-- Feature Tags / Tech Stack Indicators -->
+    <g transform="translate(0, 318)">
+      <!-- Tag 1 -->
+      <rect x="0" y="0" width="138" height="26" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1" />
+      <text x="12" y="17" fill="#38bdf8" font-size="11.5" font-family="monospace" font-weight="500">⚡ Text-to-CAD</text>
+
+      <!-- Tag 2 -->
+      <rect x="148" y="0" width="158" height="26" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1" />
+      <text x="160" y="17" fill="#818cf8" font-size="11.5" font-family="monospace" font-weight="500">🐍 Python / Rust CAD</text>
+
+      <!-- Tag 3 -->
+      <rect x="316" y="0" width="138" height="26" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1" />
+      <text x="328" y="17" fill="#c084fc" font-size="11.5" font-family="monospace" font-weight="500">📐 FreeCAD &amp; OCCT</text>
+
+      <!-- Tag 4 -->
+      <rect x="464" y="0" width="128" height="26" rx="6" fill="#0f172a" stroke="#334155" stroke-width="1" />
+      <text x="476" y="17" fill="#34d399" font-size="11.5" font-family="monospace" font-weight="500">☁️ Cloud PLM / DFM</text>
+    </g>
+  </g>
+</svg>
