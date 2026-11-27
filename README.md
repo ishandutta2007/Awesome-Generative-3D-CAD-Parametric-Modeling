@@ -7,7 +7,7 @@
 <p align="center">
   <a href="https://github.com/ishandutta2007/Awesome-Awesome-Awesome"><img src="https://img.shields.io/badge/Awesome-%E2%9C%94-blueviolet?style=flat-square&logo=github" alt="Awesome"/></a>
   <a href="https://discord.gg/jc4xtF58Ve"><img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" /></a>
-  <a href="https://github.com/ishandutta2007/Awesome-Generative-3D-CAD-Parametric-Modeling"><img src="https://img.shields.io/github/stars/ishandutta2007/Awesome-Generative-3D-CAD-Parametric-Modeling?style=social" alt="GitHub stars" /></a>
+  <a href="https://github.com/ishandutta2007/Awesome-Generative-3D-CAD-Parametric-Modeling"><img src="https://img.shields.io/github/stars/ishandutta2007/Awesome-Generative-3D-CAD-Parametric-Modeling?style=social" alt="GitHub_Stars" /></a>
   <a href="https://github.com/ishandutta2007/Awesome-Generative-3D-CAD-Parametric-Modeling/fork"><img src="https://img.shields.io/github/forks/ishandutta2007/Awesome-Generative-3D-CAD-Parametric-Modeling?style=social" alt="GitHub forks" /></a>
   <a href="https://github.com/ishandutta2007"><img alt="GitHub followers" src="https://img.shields.io/github/followers/ishandutta2007?label=Follow" /></a>
 </p>
@@ -68,9 +68,9 @@ The global Mechanical CAD (MCAD), Generative Design & Parametric Modeling Softwa
 
 ## 💻 Open-Source GitHub Projects 🛠️
 
-*Sorted descending by repository GitHub star count.*
+*Sorted descending by repository GitHub Stars_Count.*
 
-| Project | Stars Badge | Language / Focus | Description |
+| Project | Stars_Badge | Language / Focus | Description |
 | :--- | :---: | :--- | :--- |
 | **[FreeCAD](https://github.com/FreeCAD/FreeCAD)** 📐 | [![Stars](https://img.shields.io/github/stars/FreeCAD/FreeCAD?style=social&color=white)](https://github.com/FreeCAD/FreeCAD/stargazers) | C++ / Python (GUI & Kernel) | Official source code of FreeCAD, a free and open-source multiplatform 3D parametric modeler supporting modular workbenches and OpenCASCADE geometry. |
 | **[earthtojake/text-to-cad](https://github.com/earthtojake/text-to-cad)** 🤖 | [![Stars](https://img.shields.io/github/stars/earthtojake/text-to-cad?style=social&color=white)](https://github.com/earthtojake/text-to-cad/stargazers) | TypeScript / Python (AI CAD) | Open-source prompt-driven AI tool to design physical products directly from natural language prompts, producing parametric 3D CAD models. |
@@ -109,7 +109,7 @@ Contributions are welcome and appreciated! To maintain the highest curation qual
    ```
 2. **Add the tool** into the appropriate table adhering to the established format:
    - For SaaS tools: ensure pricing and free-tier limits are accurately detailed.
-   - For open-source tools: include the GitHub star badge linking to its `/stargazers` page.
+   - For open-source tools: include the GitHub Stars_Badge linking to its `/stargazers` page.
 3. **Commit your changes** with descriptive commit messages:
    ```bash
    git commit -m "feat: add NewCADTool to open-source parametric category"
